@@ -1,0 +1,144 @@
+{% extends 'RUser/design.html' %}
+{% block userblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 904px;
+    height: 202px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style4 {color: #FFFF00; font-weight: bold; }
+.style6 {
+	font-size: 24px;
+	color: #FFFF00;
+	font-weight: bold;
+}
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-5">
+
+                   <form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center style1">View Child Mortality Prediction Type !!! </p>
+                            <hr>
+
+                                {% csrf_token %}
+                                <table width="1122" align="center">
+                                  <tr>
+                                    <td height="44" colspan="4" bgcolor="#FF0000">&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td width="287" height="44" bgcolor="#FF0000"><div align="center"><span class="style4 style2">Enter Country Name Here </span></div></td>
+                                    <td width="269"><input type="text" name="country"></td>
+                                    <td width="269" bgcolor="#FF0000"><span class="style4">Enter Start Date Here </span></td>
+                                    <td width="269"><input type="text" name="start_date"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center"><span class="style4">Enter End Date</span></div></td>
+                                    <td><input type="text" name="end_date"></td>
+                                    <td bgcolor="#FF0000"><span class="style4">Total days</span></td>
+                                    <td><input type="text" name="days"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center"><span class="style4">Enter Year</span></div></td>
+                                    <td><input type="text" name="year"></td>
+                                    <td bgcolor="#FF0000"><span class="style4">Enter Total weeks</span></td>
+                                    <td><input type="text" name="week"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center"><span class="style4">Enter Total Deaths</span></div></td>
+                                    <td><input type="text" name="total_deaths"></td>
+                                    <td bgcolor="#FF0000"><span class="style4">Enter Child_Age</span></td>
+                                    <td><input type="text" name="Child_Age"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center"><span class="style4">Enter Disease</span></div></td>
+                                    <td><input type="text" name="Disease"></td>
+                                    <td bgcolor="#FF0000"><span class="style4">Select Medicine Status</span></td>
+                                    <td><select name="Medicine_Status">
+                                      <option>---Select Medicine Status</option>
+                                      <option>Yes</option>
+                                      <option>No</option>
+                                    </select>                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center"><span class="style4">Enter Life expectany(%)</span></div></td>
+                                    <td><input type="text" name="Life_expectancy"></td>
+                                    <td bgcolor="#FF0000"><span class="style4">Enter RID</span></td>
+                                    <td><input type="text" name="RID"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" colspan="4" bgcolor="#FF0000"><div align="center">
+                                      <input name="submit" type="submit" class="style1" value="Predict">
+                                    </div></td>
+                                  </tr>
+                                </table>
+					 </fieldset>
+				  </form>
+
+
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+
+                            <hr>
+                            <div>
+                              <table width="657" height="57" border="0" align="center" >
+                                    <tr><td width="420" bgcolor="#FF0000"><div align="center"><span class="style6">Child Mortality Prediction Type</span> </div></td>
+
+
+
+                                      <td width="227" bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center"><strong>{{objs}}</strong></div></td>
+                                    </tr>
+                      </table>
+
+
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>

@@ -1,0 +1,106 @@
+{% extends 'SProvider/design1.html' %}
+{% block researchblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 1104px;
+    height: 442px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-5">
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p align="center" class="text-uppercase pull-center style1">View Child Mortality prediction Type </p>
+                            <hr>
+                            <div >
+                               <table border="5" align="center" bordercolor="#FF00FF">
+                               <tr>
+
+
+                                   <td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">country</span></div></td>
+ <td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">start_date</span></div></td>
+ <td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">end_date</span></div></td>
+ <td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">days</span></div></td>
+ <td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">year</span></div></td>
+ <td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">week</span></div></td>
+ <td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">total_deaths</span></div></td>
+ <td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">Child_Age</span></div></td>
+ <td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">Disease</span></div></td>
+ <td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">Medicine_Status</span></div></td>
+ <td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">Life_expectany</span></div></td>
+ <td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">RID</span></div></td>
+ <td bgcolor="#FFFF00"><div align="center" class="style1"><span class="style8 style6">Prediction</span></div></td>
+
+                      </tr>
+                            {% for object in list_objects %}
+                      <tr>
+
+                            <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.country}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.start_date}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.end_date}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.days}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.year}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.week}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.total_deaths}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.Child_Age}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.Disease}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.Medicine_Status}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.Life_expectancy}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.RID}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.Prediction}}</td>
+
+                        </tr>
+
+                                        {% endfor %}
+                      </table>
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>
